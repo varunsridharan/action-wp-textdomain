@@ -10,7 +10,11 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
+ls -la
+
 cd ../
+
+ls -la
 
 php addtextdomain.php -i "$DOMAIN" "$GITHUB_WORKSPACE"
 
