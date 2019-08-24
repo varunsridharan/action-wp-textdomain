@@ -10,15 +10,7 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
-ls -la
-
-cd /
-
-ls -la
-
-php addtextdomain.php -i "$DOMAIN" "$GITHUB_WORKSPACE"
-
-cd "$GITHUB_WORKSPACE"
+php /add-textdomain.php -i "$DOMAIN" "$GITHUB_WORKSPACE"
 
 # Add File To Commit
 git add -A
