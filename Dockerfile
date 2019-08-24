@@ -1,4 +1,4 @@
-FROM php:7.3
+FROM composer:1
 
 RUN git config --global user.email "githubactionbot+wp@gmail.com" && git config --global user.name "WP Textdomain Github Bot"
 
