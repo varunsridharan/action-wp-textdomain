@@ -10,6 +10,9 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
+# Update Github Config.
+git config --global user.email "githubactionbot+wp@gmail.com" && git config --global user.name "WP Pot Generator"
+
 php /add-textdomain.php -i "$DOMAIN" "$GITHUB_WORKSPACE"
 
 # Add File To Commit
