@@ -1,0 +1,16 @@
+name: 'WP Text Domain'
+description: 'Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repo'
+author: 'varunsridharan'
+branding:
+  icon: 'message-square'
+  color: 'gray-dark'
+inputs:
+  domain:
+    description: 'WordPress Theme / Plugin TextDomain'
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.domain }}
