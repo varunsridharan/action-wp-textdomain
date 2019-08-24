@@ -12,7 +12,7 @@ fi
 
 ls -la
 
-cd ../
+cd /
 
 ls -la
 
