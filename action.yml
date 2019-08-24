@@ -1,4 +1,4 @@
-name: 'WP Text Domain'
+name: 'WP Textdomain'
 description: 'Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repo'
 author: 'varunsridharan'
 branding:
