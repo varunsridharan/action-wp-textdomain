@@ -9,10 +9,11 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
   echo "Set the GITHUB_TOKEN env variable"
   exit 1
 fi
-
+echo " "
 echo "##[group] 💬 Updating Textdomain : $DOMAIN"
 php /add-textdomain.php -i "$DOMAIN" "$GITHUB_WORKSPACE"
 echo "##[endgroup]"
+echo " "
 
 if [[ "$(git status --porcelain)" != "" ]]; then
   echo "##[group] 👌 Pushing To Github"
