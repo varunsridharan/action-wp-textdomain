@@ -1,4 +1,4 @@
-FROM composer:1
+FROM php:zts-alpine3.11
 
 COPY entrypoint.sh /entrypoint.sh
 COPY add-textdomain.php /add-textdomain.php

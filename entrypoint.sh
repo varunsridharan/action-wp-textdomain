@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-set -eo
+set -eu
 
 BRANCH=${GITHUB_REF#refs/heads/}
 DOMAIN="$INPUT_DOMAIN"
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
-	echo "Set the GITHUB_TOKEN env variable"
-	exit 1
+  echo "Set the GITHUB_TOKEN env variable"
+  exit 1
 fi
 
 # Update Github Config.
