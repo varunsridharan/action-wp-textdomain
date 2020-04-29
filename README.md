@@ -1,6 +1,3 @@
-> **⚠️ Note:** To use this GitHub Action, you must have access to GitHub Actions. GitHub Actions are currently only available in public beta. You can [apply for Github Actions beta access here](https://github.com/features/actions).
-
-
 # WP Text Domain - ***Github Action***
 This Action Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repo
 
@@ -8,26 +5,26 @@ This Action Adds TextDomain To your wordpress Plugin / Theme based on the conten
 * `domain` - Slug of your WordPress Theme / Plugin Slug  **Required**
 * `GITHUB_TOKEN` - you do not need to generate one but you do have to explicitly make it available to the Action
 
-> **⚠️ Note:** You Should Provide Github Token. If Not No Updated File Will Be Committed & Pushed
+> **⚠️ Note:** You Should Provide Github Token. If Not Updated File Will Be Committed & Pushed.
 
 ## Example Workflow File
 ```yaml
-name: WordPress Textdomain
+name: On Push
 
 on:
   push:
     branches:
-    - refs/tags/*
+      - master
 
 jobs:
-  envatoftp:
+  WP_Text_Domain:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: WordPress Textdomain
-      uses: varunsridharan/action-wp-textdomain@master
+      uses: varunsridharan/action-wp-textdomain@1.1
       with:
-        domain: 'wponion'
+        domain: '{your-text-domain}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
