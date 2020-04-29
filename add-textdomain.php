@@ -58,20 +58,11 @@ class AddTextdomain {
 	}
 
 	/**
-	 * @param      $log
-	 * @param bool $handle
-	 */
-	public function console_log( $log, $handle = false ) {
-		$handle = ( false === $handle ) ? STDERR : $handle;
-		fwrite( $handle, $log );
-	}
-
-	/**
 	 * Prints CLI usage.
 	 */
 	public function usage() {
 		$usage = "Usage: php add-textdomain.php [-i] <domain> <file>\n\nAdds the string <domain> as a last argument to all i18n function calls in <file>\nand prints the modified php file on standard output.\n\nOptions:\n    -i    Modifies the PHP file in place, instead of printing it to standard output.\n";
-		$this->console_log( $usage, STDERR );
+		fwrite( STDERR, $usage );
 		exit( 1 );
 	}
 
@@ -312,12 +303,12 @@ if ( __FILE__ === $included_files[0] ) {
 		$files    = new RecursiveIteratorIterator( $callback, RecursiveIteratorIterator::CHILD_FIRST );
 		foreach ( $files as $file ) {
 			if ( 'php' === $file->getExtension() ) {
-				$adddomain->console_log( "Updating : {$file->getPathname()}" );
+				fwrite( STDERR, "Updating File : {$file->getPathname()}" );
 				$adddomain->process_file( $argv[1], $file->getPathname(), $inplace );
 			}
 		}
 	} else {
-		$adddomain->console_log( "Updating : $argv[2]" );
+		fwrite( STDERR, "Updating File : {$argv[2]}" );
 		$adddomain->process_file( $argv[1], $argv[2], $inplace );
 	}
 }
