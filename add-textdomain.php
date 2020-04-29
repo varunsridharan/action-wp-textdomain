@@ -303,12 +303,12 @@ if ( __FILE__ === $included_files[0] ) {
 		$files    = new RecursiveIteratorIterator( $callback, RecursiveIteratorIterator::CHILD_FIRST );
 		foreach ( $files as $file ) {
 			if ( 'php' === $file->getExtension() ) {
-				fwrite( STDERR, "Updating File : {$file->getPathname()}" );
+				echo "Updating File : {$file->getPathname()}" . PHP_EOL;
 				$adddomain->process_file( $argv[1], $file->getPathname(), $inplace );
 			}
 		}
 	} else {
-		fwrite( STDERR, "Updating File : {$argv[2]}" );
+		echo "Updating File : {$argv[2]}" . PHP_EOL;
 		$adddomain->process_file( $argv[1], $argv[2], $inplace );
 	}
 }
