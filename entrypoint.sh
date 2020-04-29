@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-set -eo
+set -eu
 
 BRANCH=${GITHUB_REF#refs/heads/}
 DOMAIN="$INPUT_DOMAIN"
