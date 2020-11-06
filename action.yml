@@ -1,16 +1,26 @@
-name: 'WP Textdomain'
-description: 'Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repo'
+name: 'Text Domain Updater For WordPress'
+
+description: 'Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repository'
+
 author: 'varunsridharan'
+
 branding:
   icon: 'message-square'
   color: 'gray-dark'
-inputs:
-  domain:
-    description: 'WordPress Theme / Plugin TextDomain'
 
+inputs:
+  path:
+    description: 'Set Custom Path There Files Needs To Be Updated'
+    required: false
+    default: './'
+  domain:
+    description: 'WordPress Theme / Plugin Text-Domain'
+    required: true
+    default: ''
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.domain }}
+    - ${{ inputs.path }}

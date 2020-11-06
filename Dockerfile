@@ -1,11 +1,11 @@
-FROM php:zts-alpine3.11
-
-RUN apk add git
+FROM varunsridharan/actions-alpine-php:latest
 
 COPY entrypoint.sh /entrypoint.sh
+
 COPY add-textdomain.php /add-textdomain.php
 
-RUN chmod +x /entrypoint.sh
-RUN chmod +x /add-textdomain.php
+RUN chmod 777 /entrypoint.sh
+
+RUN chmod 777 /add-textdomain.php
 
 ENTRYPOINT ["/entrypoint.sh"]
