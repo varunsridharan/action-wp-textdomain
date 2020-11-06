@@ -3,14 +3,16 @@
 # WP Text Domain - ***Github Action***
 This Action Adds TextDomain To your wordpress Plugin / Theme based on the content inside Github Repo
 
-## Configuration
-* `domain` - Slug of your WordPress Theme / Plugin Slug  **Required**
-* `path` - Location where to search for `*.php` files and update textdomain
-* `GITHUB_TOKEN` - you do not need to generate one but you do have to explicitly make it available to the Action
+## ⚙️ Configuration
+| Option | Default | Description |
+| --- | ------- | ----------- |
+| `domain` | - | Slug of your WordPress Theme / Plugin Slug  **Required** |
+| `path`  | `./` | Location where to search for `*.php` files and update textdomain |
+| `GITHUB_TOKEN` | - | you do not need to generate one but you do have to explicitly make it available to the Action |
 
 > **⚠️ Note:** You Should Provide Github Token. If Not Updated File Will Be Committed & Pushed.
 
-## Example Workflow File
+## 🚀  Example Workflow File
 <!-- START RAW -->
 ```yaml
 name: On Push
